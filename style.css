@@ -40,8 +40,16 @@
   --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
 
   --nav-h: 68px;
-  --page-bg-1: radial-gradient(1100px 500px at 15% -10%, rgba(51, 194, 207, 0.08), transparent 60%);
-  --page-bg-2: radial-gradient(900px 500px at 100% 0%, rgba(240, 146, 74, 0.06), transparent 55%);
+  --page-bg-1: radial-gradient(
+    1100px 500px at 15% -10%,
+    rgba(51, 194, 207, 0.08),
+    transparent 60%
+  );
+  --page-bg-2: radial-gradient(
+    900px 500px at 100% 0%,
+    rgba(240, 146, 74, 0.06),
+    transparent 55%
+  );
 
   color-scheme: dark;
 }
@@ -72,8 +80,16 @@
 
   --shadow: 0 20px 50px -20px rgba(15, 23, 31, 0.18);
 
-  --page-bg-1: radial-gradient(1100px 500px at 15% -10%, rgba(14, 143, 155, 0.07), transparent 60%);
-  --page-bg-2: radial-gradient(900px 500px at 100% 0%, rgba(201, 106, 38, 0.06), transparent 55%);
+  --page-bg-1: radial-gradient(
+    1100px 500px at 15% -10%,
+    rgba(14, 143, 155, 0.07),
+    transparent 60%
+  );
+  --page-bg-2: radial-gradient(
+    900px 500px at 100% 0%,
+    rgba(201, 106, 38, 0.06),
+    transparent 55%
+  );
 
   color-scheme: light;
 }
@@ -130,7 +146,9 @@ body {
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.35s ease, color 0.35s ease;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
 
 hr {
@@ -140,7 +158,9 @@ hr {
 a {
   color: var(--teal);
   text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 a:hover,
@@ -173,8 +193,13 @@ iframe {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 /* =============================================
@@ -186,8 +211,12 @@ body {
 }
 
 @keyframes pageFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #pageLoader {
@@ -198,7 +227,9 @@ body {
   align-items: center;
   justify-content: center;
   background: var(--bg);
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 }
 
 #pageLoader.loaded {
@@ -217,7 +248,9 @@ body {
 }
 
 @keyframes loaderSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* =============================================
@@ -226,7 +259,8 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
@@ -239,7 +273,8 @@ body {
 .revealStagger > * {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -248,12 +283,24 @@ body {
   transform: translateY(0);
 }
 
-.revealStagger.revealVisible > *:nth-child(1) { transition-delay: 0.05s; }
-.revealStagger.revealVisible > *:nth-child(2) { transition-delay: 0.12s; }
-.revealStagger.revealVisible > *:nth-child(3) { transition-delay: 0.19s; }
-.revealStagger.revealVisible > *:nth-child(4) { transition-delay: 0.26s; }
-.revealStagger.revealVisible > *:nth-child(5) { transition-delay: 0.33s; }
-.revealStagger.revealVisible > *:nth-child(6) { transition-delay: 0.4s; }
+.revealStagger.revealVisible > *:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.revealStagger.revealVisible > *:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.revealStagger.revealVisible > *:nth-child(3) {
+  transition-delay: 0.19s;
+}
+.revealStagger.revealVisible > *:nth-child(4) {
+  transition-delay: 0.26s;
+}
+.revealStagger.revealVisible > *:nth-child(5) {
+  transition-delay: 0.33s;
+}
+.revealStagger.revealVisible > *:nth-child(6) {
+  transition-delay: 0.4s;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
@@ -278,7 +325,9 @@ body {
   background: rgba(11, 13, 16, 0.72);
   backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--border);
-  transition: background-color 0.35s ease, border-color 0.35s ease;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease;
 }
 
 :root[data-theme="light"] #mainNav {
@@ -374,7 +423,9 @@ body {
   font-size: 0.85rem;
   padding: 0.55rem 1.2rem;
   border-radius: 999px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .navCta:hover {
@@ -397,7 +448,10 @@ body {
   color: var(--text);
   cursor: pointer;
   font-size: 0.95rem;
-  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .themeToggle:hover {
@@ -406,9 +460,15 @@ body {
   transform: translateY(-1px) rotate(15deg);
 }
 
-.themeToggle .fa-sun { display: none; }
-:root[data-theme="light"] .themeToggle .fa-sun { display: inline-block; }
-:root[data-theme="light"] .themeToggle .fa-moon { display: none; }
+.themeToggle .fa-sun {
+  display: none;
+}
+:root[data-theme="light"] .themeToggle .fa-sun {
+  display: inline-block;
+}
+:root[data-theme="light"] .themeToggle .fa-moon {
+  display: none;
+}
 
 /* زرار الهامبرجر — مخفي على الـ desktop */
 .menuToggle {
@@ -443,13 +503,27 @@ body {
   animation: heroItemIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.heroText .eyebrow { animation-delay: 0.1s; }
-.heroText h1 { animation-delay: 0.22s; }
-.heroText h3 { animation-delay: 0.34s; }
-.heroText .lead { animation-delay: 0.44s; }
-.heroText > p:not(.lead):not(.updated) { animation-delay: 0.54s; }
-.heroText .heroActions { animation-delay: 0.64s; }
-.heroText .updated { animation-delay: 0.74s; }
+.heroText .eyebrow {
+  animation-delay: 0.1s;
+}
+.heroText h1 {
+  animation-delay: 0.22s;
+}
+.heroText h3 {
+  animation-delay: 0.34s;
+}
+.heroText .lead {
+  animation-delay: 0.44s;
+}
+.heroText > p:not(.lead):not(.updated) {
+  animation-delay: 0.54s;
+}
+.heroText .heroActions {
+  animation-delay: 0.64s;
+}
+.heroText .updated {
+  animation-delay: 0.74s;
+}
 
 @keyframes heroItemIn {
   to {
@@ -504,8 +578,13 @@ body {
 }
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
 }
 
 .heroText h1 {
@@ -555,7 +634,10 @@ body {
   font-size: 0.92rem;
   padding: 0.85rem 1.6rem;
   border-radius: 999px;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .btnPrimary {
@@ -666,7 +748,9 @@ mark {
   border-radius: 4px;
 }
 
-del { color: var(--text-faint); }
+del {
+  color: var(--text-faint);
+}
 
 ins {
   color: var(--teal);
@@ -699,7 +783,9 @@ address {
   line-height: 1.9;
 }
 
-address a { color: var(--teal); }
+address a {
+  color: var(--teal);
+}
 
 main ul,
 main ol {
@@ -708,8 +794,12 @@ main ol {
   margin: 0 0 var(--space-sm);
 }
 
-main li { margin-bottom: 0.4rem; }
-main li::marker { color: var(--teal); }
+main li {
+  margin-bottom: 0.4rem;
+}
+main li::marker {
+  color: var(--teal);
+}
 
 /* =============================================
    About Me — visual upgrade
@@ -742,7 +832,10 @@ main li::marker { color: var(--teal); }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.1rem 1.2rem;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .aboutStatCard:hover {
@@ -807,7 +900,10 @@ main li::marker { color: var(--teal); }
   padding: 0.5rem 1rem;
   border-radius: 999px;
   font-size: 0.88rem;
-  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .tagList li:hover {
@@ -912,9 +1008,18 @@ progress {
   background: var(--panel-2);
 }
 
-progress::-webkit-progress-bar { background: var(--panel-2); border-radius: 4px; }
-progress::-webkit-progress-value { background: linear-gradient(90deg, var(--teal), var(--orange)); border-radius: 4px; }
-progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), var(--orange)); border-radius: 4px; }
+progress::-webkit-progress-bar {
+  background: var(--panel-2);
+  border-radius: 4px;
+}
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--teal), var(--orange));
+  border-radius: 4px;
+}
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--teal), var(--orange));
+  border-radius: 4px;
+}
 
 /* =============================================
    Tools
@@ -931,7 +1036,10 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 1rem 1.1rem;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .toolItem:hover {
@@ -997,7 +1105,10 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .projectCard:hover {
@@ -1022,8 +1133,12 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
   transform: scale(1.06);
 }
 
-.projectBody { padding: var(--space-md); }
-.projectBody h2 { margin-top: 0; }
+.projectBody {
+  padding: var(--space-md);
+}
+.projectBody h2 {
+  margin-top: 0;
+}
 
 .projectTools {
   font-family: var(--font-mono);
@@ -1060,7 +1175,10 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .certGrid li:hover {
@@ -1074,8 +1192,13 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
   margin-bottom: 0.3rem;
 }
 
-.certGrid b { font-size: 1rem; }
-.certIssuer { color: var(--text-muted); font-size: 0.88rem; }
+.certGrid b {
+  font-size: 1rem;
+}
+.certIssuer {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
 
 .certDate {
   font-family: var(--font-mono);
@@ -1104,7 +1227,10 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: var(--space-md);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .testimonialCard:hover {
@@ -1147,7 +1273,10 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .galleryItem:hover {
@@ -1162,7 +1291,9 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
   transition: transform 0.4s ease;
 }
 
-.galleryItem:hover img { transform: scale(1.05); }
+.galleryItem:hover img {
+  transform: scale(1.05);
+}
 
 .galleryItem figcaption {
   padding: 0.8rem 1rem;
@@ -1174,7 +1305,9 @@ progress::-moz-progress-bar { background: linear-gradient(90deg, var(--teal), va
 /* =============================================
    Multimedia
    ============================================= */
-.mediaBlock { margin-bottom: var(--space-md); }
+.mediaBlock {
+  margin-bottom: var(--space-md);
+}
 
 audio,
 video {
@@ -1223,13 +1356,20 @@ summary {
   color: var(--text);
 }
 
-summary::marker { color: var(--orange); }
-details p { margin-top: 0.6rem; }
+summary::marker {
+  color: var(--orange);
+}
+details p {
+  margin-top: 0.6rem;
+}
 
 /* =============================================
    Code
    ============================================= */
-code { font-family: var(--font-mono); font-size: 0.85rem; }
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
 
 .codeExamples pre {
   background: #08090b;
@@ -1265,10 +1405,16 @@ code { font-family: var(--font-mono); font-size: 0.85rem; }
   color: var(--text);
   font-size: 0.92rem;
   word-break: break-word;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
-.contactCard i { color: var(--teal); font-size: 1.1rem; }
+.contactCard i {
+  color: var(--teal);
+  font-size: 1.1rem;
+}
 
 a.contactCard:hover {
   transform: translateY(-6px);
@@ -1280,7 +1426,9 @@ a.contactCard:hover {
 /* =============================================
    Form
    ============================================= */
-form { margin-top: var(--space-sm); }
+form {
+  margin-top: var(--space-sm);
+}
 
 fieldset {
   border: 1px solid var(--border);
@@ -1306,8 +1454,14 @@ legend {
   margin-top: 0.4rem;
 }
 
-.field { display: flex; flex-direction: column; gap: 0.4rem; }
-.fieldWide { grid-column: 1 / -1; }
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.fieldWide {
+  grid-column: 1 / -1;
+}
 
 label {
   color: var(--text-muted);
@@ -1326,13 +1480,26 @@ textarea {
   color: var(--text);
   font-family: var(--font-body);
   font-size: 16px; /* يمنع zoom على iOS */
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-input:hover, select:hover, textarea:hover { border-color: var(--border-strong); }
-input:focus, select:focus, textarea:focus { border-color: var(--teal); }
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--border-strong);
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--teal);
+}
 
-textarea { resize: vertical; min-height: 120px; }
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -1342,9 +1509,17 @@ input[type="radio"] {
   vertical-align: middle;
 }
 
-input[type="range"] { accent-color: var(--orange); padding: 0; }
-input[type="color"] { padding: 0.25rem; height: 44px; }
-input[type="file"] { padding: 0.5rem; }
+input[type="range"] {
+  accent-color: var(--orange);
+  padding: 0;
+}
+input[type="color"] {
+  padding: 0.25rem;
+  height: 44px;
+}
+input[type="file"] {
+  padding: 0.5rem;
+}
 
 .inlineOptions {
   display: flex;
@@ -1352,10 +1527,20 @@ input[type="file"] { padding: 0.5rem; }
   gap: 1rem 1.5rem;
 }
 
-.inlineOptions.stacked { flex-direction: column; gap: 0.7rem; }
-.inlineOptions label { color: var(--text); }
+.inlineOptions.stacked {
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.inlineOptions label {
+  color: var(--text);
+}
 
-.formActions { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+.formActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
 
 input[type="submit"],
 input[type="reset"],
@@ -1369,10 +1554,16 @@ button[type="button"] {
   border: 1px solid var(--teal);
   background: transparent;
   color: var(--teal);
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-input[type="submit"] { background: var(--teal); color: #0b0d10; }
+input[type="submit"] {
+  background: var(--teal);
+  color: #0b0d10;
+}
 
 input[type="submit"]:hover {
   background: var(--orange);
@@ -1414,7 +1605,9 @@ button[type="button"]:hover {
   display: block;
 }
 
-.field.fieldError label { color: var(--red); }
+.field.fieldError label {
+  color: var(--red);
+}
 
 .formStatus {
   font-family: var(--font-mono);
@@ -1425,7 +1618,9 @@ button[type="button"]:hover {
   display: none;
 }
 
-.formStatus.show { display: block; }
+.formStatus.show {
+  display: block;
+}
 
 .formStatus.success {
   background: var(--green-soft);
@@ -1459,7 +1654,10 @@ button[type="button"]:hover {
   border-radius: 999px;
   color: var(--text-muted);
   font-size: 0.9rem;
-  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .followMe ul li a:hover {
@@ -1490,7 +1688,13 @@ footer::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--teal), var(--orange), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--teal),
+    var(--orange),
+    transparent
+  );
 }
 
 .footerInner {
@@ -1526,7 +1730,10 @@ footer::before {
   border-radius: 50%;
   border: 1px solid var(--border);
   color: var(--text-muted);
-  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .footerSocial a:hover {
@@ -1535,9 +1742,16 @@ footer::before {
   transform: translateY(-3px);
 }
 
-footer address { margin: 0; color: var(--text-faint); }
-footer nav a { color: var(--text-muted); }
-footer nav a:hover { color: var(--orange); }
+footer address {
+  margin: 0;
+  color: var(--text-faint);
+}
+footer nav a {
+  color: var(--text-muted);
+}
+footer nav a:hover {
+  color: var(--orange);
+}
 
 .footerDivider {
   width: 100%;
@@ -1571,8 +1785,13 @@ footer nav a:hover { color: var(--orange); }
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease,
-    border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 #backToTop.show {
@@ -1664,7 +1883,10 @@ footer nav a:hover { color: var(--orange); }
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      visibility 0.35s;
     z-index: 10000;
   }
 
@@ -1679,7 +1901,9 @@ footer nav a:hover { color: var(--orange); }
     transform: translateX(-50%) translateY(0);
   }
 
-  #mainNav ul li { width: 100%; }
+  #mainNav ul li {
+    width: 100%;
+  }
 
   #mainNav ul li a {
     display: block;
@@ -1689,7 +1913,9 @@ footer nav a:hover { color: var(--orange); }
     transition: 0.25s;
   }
 
-  #mainNav ul li:last-child a { border-bottom: none; }
+  #mainNav ul li:last-child a {
+    border-bottom: none;
+  }
 
   #mainNav ul li a:hover {
     background: rgba(51, 194, 207, 0.12);
@@ -1697,14 +1923,20 @@ footer nav a:hover { color: var(--orange); }
     padding-left: 30px;
   }
 
-  #mainNav ul li a::after { display: none; }
+  #mainNav ul li a::after {
+    display: none;
+  }
 
   main > div {
     padding: 60px 20px;
   }
 
-  .heroText h1 { font-size: 2.5rem; }
-  .heroText h3 { font-size: 1.2rem; }
+  .heroText h1 {
+    font-size: 2.5rem;
+  }
+  .heroText h3 {
+    font-size: 1.2rem;
+  }
 
   .heroActions {
     flex-direction: column;
@@ -1721,27 +1953,41 @@ footer nav a:hover { color: var(--orange); }
     gap: 8px;
   }
 
-  .skillPct { justify-self: start; }
+  .skillPct {
+    justify-self: start;
+  }
 
   .contactCard {
     justify-content: center;
     text-align: center;
   }
 
-  .formActions { flex-direction: column; }
+  .formActions {
+    flex-direction: column;
+  }
   .formActions input,
-  .formActions button { width: 100%; }
+  .formActions button {
+    width: 100%;
+  }
 
   .projectGrid,
   .galleryGrid,
   .certGrid,
   .testimonialGrid,
-  .toolGrid { grid-template-columns: 1fr; }
+  .toolGrid {
+    grid-template-columns: 1fr;
+  }
 
-  .followMe ul { justify-content: center; }
+  .followMe ul {
+    justify-content: center;
+  }
 
-  main h1 { font-size: 2rem; }
-  main h2 { font-size: 1.5rem; }
+  main h1 {
+    font-size: 2rem;
+  }
+  main h2 {
+    font-size: 1.5rem;
+  }
 
   #backToTop {
     right: 1rem;
@@ -1755,19 +2001,40 @@ footer nav a:hover { color: var(--orange); }
    Responsive — Small Mobile  (max 480px)
    ============================================= */
 @media (max-width: 480px) {
-  .heroText h1 { font-size: 2rem; }
-  .heroPhoto { max-width: 220px; }
-  .eyebrow { font-size: 0.7rem; }
-  .btn { padding: 0.8rem 1.2rem; font-size: 0.85rem; }
-  .contactCard { padding: 15px; font-size: 0.85rem; }
-  fieldset { padding: 20px 15px; }
-  table { font-size: 0.8rem; }
+  .heroText h1 {
+    font-size: 2rem;
+  }
+  .heroPhoto {
+    max-width: 220px;
+  }
+  .eyebrow {
+    font-size: 0.7rem;
+  }
+  .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  .contactCard {
+    padding: 15px;
+    font-size: 0.85rem;
+  }
+  fieldset {
+    padding: 20px 15px;
+  }
+  table {
+    font-size: 0.8rem;
+  }
 }
 
 /* =============================================
    Small screen — skills
    ============================================= */
 @media (max-width: 640px) {
-  .skillBars li { grid-template-columns: 1fr; gap: 0.3rem; }
-  .skillPct { justify-self: start; }
+  .skillBars li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+  .skillPct {
+    justify-self: start;
+  }
 }

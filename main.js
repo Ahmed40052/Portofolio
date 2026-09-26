@@ -45,7 +45,7 @@ function applyTheme(theme) {
     applyTheme(saved);
   } else {
     const prefersLight = window.matchMedia(
-      "(prefers-color-scheme: light)"
+      "(prefers-color-scheme: light)",
     ).matches;
     applyTheme(prefersLight ? "light" : "dark");
   }
@@ -53,7 +53,8 @@ function applyTheme(theme) {
 
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", () => {
-    const current = rootEl.getAttribute("data-theme") === "light" ? "light" : "dark";
+    const current =
+      rootEl.getAttribute("data-theme") === "light" ? "light" : "dark";
     applyTheme(current === "light" ? "dark" : "light");
   });
 }
@@ -83,7 +84,7 @@ if ("IntersectionObserver" in window && revealTargets.length) {
         }
       });
     },
-    { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
   );
 
   revealTargets.forEach((el) => revealObserver.observe(el));
@@ -113,7 +114,7 @@ if ("IntersectionObserver" in window && sections.length) {
         }
       });
     },
-    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
   );
 
   sections.forEach((section) => spyObserver.observe(section));
@@ -134,7 +135,7 @@ if (backToTopBtn) {
         backToTopBtn.classList.remove("show");
       }
     },
-    { passive: true }
+    { passive: true },
   );
 
   backToTopBtn.addEventListener("click", () => {
@@ -184,17 +185,15 @@ if (contactFormEl) {
     }
   }
 
-  contactFormEl
-    .querySelectorAll("input, textarea, select")
-    .forEach((input) => {
-      input.addEventListener("blur", () => validateField(input));
-      input.addEventListener("input", () => {
-        const fieldWrap = input.closest(".field");
-        if (fieldWrap && fieldWrap.classList.contains("fieldError")) {
-          validateField(input);
-        }
-      });
+  contactFormEl.querySelectorAll("input, textarea, select").forEach((input) => {
+    input.addEventListener("blur", () => validateField(input));
+    input.addEventListener("input", () => {
+      const fieldWrap = input.closest(".field");
+      if (fieldWrap && fieldWrap.classList.contains("fieldError")) {
+        validateField(input);
+      }
     });
+  });
 
   contactFormEl.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -218,7 +217,9 @@ if (contactFormEl) {
       formStatusEl.textContent =
         "في حقول محتاجة تعديل قبل الإرسال، برجاء المراجعة تحت.";
       formStatusEl.classList.add("error", "show");
-      const firstError = contactFormEl.querySelector(".fieldError input, .fieldError textarea, .fieldError select");
+      const firstError = contactFormEl.querySelector(
+        ".fieldError input, .fieldError textarea, .fieldError select",
+      );
       if (firstError) firstError.focus();
     }
   });
